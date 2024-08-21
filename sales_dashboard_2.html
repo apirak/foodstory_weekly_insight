@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sales Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      :root {
+        --chart-height: 400px; /* Default height, can be adjusted */
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+      .dashboard {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      #toggleView,
+      #adjustHeight {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      #toggleView:hover,
+      #adjustHeight:hover {
+        background-color: #45a049;
+      }
+      #chartContainer {
+        position: relative;
+        height: var(--chart-height);
+        margin-top: 20px;
+      }
+      #loadingMessage {
+        text-align: center;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard">
+      <h1>Sales Dashboard</h1>
+      <button id="toggleView">Switch to Hourly View</button>
+      <button id="adjustHeight">Increase Chart Height</button>
+      <div id="chartContainer">
+        <canvas id="salesChart"></canvas>
+      </div>
+      <p id="loadingMessage">Loading data...</p>
+    </div>
+
+    <script>
+      const days = [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday',
+      ];
+      const colors = [
+        '#FF6B6B',
+        '#4ECDC4',
+        '#45B7D1',
+        '#FFA07A',
+        '#98D8C8',
+        '#F06292',
+        '#AED581',
+      ];
+
+      let isHourly = false;
+      let chart;
+      let salesData;
+      let currentHeight = 400;
+
+      function processData(data, hourly) {
+        console.log('Processing data:', data);
+        if (!Array.isArray(data) || data.length === 0) {
+          console.error('Invalid data format:', data);
+          return [];
+        }
+
+        try {
+          if (!hourly) {
+            return data
+              .map((item) => {
+                if (typeof item !== 'object' || item === null) {
+                  console.error('Invalid item in data:', item);
+                  return null;
+                }
+                return {
+                  time: item.time,
+                  ...Object.fromEntries(
+                    days.map((day) => [day, parseFloat(item[day] || 0)])
+                  ),
+                };
+              })
+              .filter((item) => item !== null);
+          } else {
+            const hourlyData = {};
+            data.forEach((item) => {
+              if (
+                typeof item !== 'object' ||
+                item === null ||
+                typeof item.time !== 'string'
+              ) {
+                console.error('Invalid item in data:', item);
+                return;
+              }
+              const hour = item.time.split(':')[0] + ':00';
+              if (!hourlyData[hour]) {
+                hourlyData[hour] = { time: hour };
+                days.forEach((day) => (hourlyData[hour][day] = 0));
+              }
+              days.forEach((day) => {
+                hourlyData[hour][day] += parseFloat(item[day] || 0);
+              });
+            });
+            return Object.values(hourlyData);
+          }
+        } catch (error) {
+          console.error('Error in processData:', error);
+          return [];
+        }
+      }
+
+      function createChart(data) {
+        console.log('Creating chart with data:', data);
+        if (!Array.isArray(data) || data.length === 0) {
+          console.error('Invalid data for chart creation:', data);
+          document.getElementById('loadingMessage').textContent =
+            'Error: No valid data to display';
+          return;
+        }
+
+        try {
+          const ctx = document.getElementById('salesChart').getContext('2d');
+
+          chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: data.map((item) => item.time),
+              datasets: days.map((day, index) => ({
+                label: day,
+                data: data.map((item) => item[day]),
+                borderColor: colors[index],
+                fill: false,
+                tension: 0.1,
+              })),
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                x: {
+                  title: {
+                    display: true,
+                    text: 'Time',
+                    font: { size: 14 },
+                  },
+                  ticks: {
+                    maxTicksLimit: 24,
+                    font: { size: 12 },
+                  },
+                },
+                y: {
+                  title: {
+                    display: true,
+                    text: 'Sales',
+                    font: { size: 14 },
+                  },
+                  beginAtZero: true,
+                  ticks: {
+                    font: { size: 12 },
+                  },
+                },
+              },
+              plugins: {
+                legend: {
+                  position: 'top',
+                  labels: {
+                    font: { size: 12 },
+                  },
+                },
+              },
+            },
+          });
+        } catch (error) {
+          console.error('Error in createChart:', error);
+          document.getElementById('loadingMessage').textContent =
+            'Error creating chart. Please check the console for details.';
+        }
+      }
+
+      function updateChart() {
+        console.log('Updating chart. Current salesData:', salesData);
+        const processedData = processData(salesData, isHourly);
+        console.log('Processed data:', processedData);
+        if (chart) {
+          chart.data.labels = processedData.map((item) => item.time);
+          chart.data.datasets.forEach((dataset, index) => {
+            dataset.data = processedData.map((item) => item[days[index]]);
+          });
+          chart.update();
+        } else {
+          createChart(processedData);
+        }
+      }
+
+      document
+        .getElementById('toggleView')
+        .addEventListener('click', function () {
+          isHourly = !isHourly;
+          this.textContent = isHourly
+            ? 'Switch to Half-hourly View'
+            : 'Switch to Hourly View';
+          updateChart();
+        });
+
+      document
+        .getElementById('adjustHeight')
+        .addEventListener('click', function () {
+          currentHeight += 100;
+          document.documentElement.style.setProperty(
+            '--chart-height',
+            `${currentHeight}px`
+          );
+          if (chart) {
+            chart.resize();
+          }
+        });
+
+      // Fetch data and initialize chart
+      fetch('processed_sales_data.json')
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('Fetched data:', data);
+          salesData = data;
+          const processedData = processData(salesData, isHourly);
+          createChart(processedData);
+          document.getElementById('loadingMessage').style.display = 'none';
+        })
+        .catch((error) => {
+          console.error('Error loading the JSON file:', error);
+          document.getElementById('loadingMessage').textContent =
+            'Error loading data. Please check the console for details.';
+        });
+    </script>
+  </body>
+</html>

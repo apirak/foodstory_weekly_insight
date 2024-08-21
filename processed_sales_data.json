@@ -1,0 +1,482 @@
+[
+  {
+    "time": "00:00",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "00:30",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "01:00",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "01:30",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "02:00",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "02:30",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "03:00",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "03:30",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "04:00",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "04:30",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "05:00",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "05:30",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "06:00",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "06:30",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "07:00",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 2.0,
+    "Tuesday": 0.0,
+    "Wednesday": 5.0
+  },
+  {
+    "time": "07:30",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 8.0,
+    "Tuesday": 12.0,
+    "Wednesday": 11.0
+  },
+  {
+    "time": "08:00",
+    "Thursday": 14.0,
+    "Friday": 14.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 10.0,
+    "Tuesday": 12.0,
+    "Wednesday": 16.0
+  },
+  {
+    "time": "08:30",
+    "Thursday": 14.0,
+    "Friday": 18.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 9.0,
+    "Tuesday": 12.0,
+    "Wednesday": 16.0
+  },
+  {
+    "time": "09:00",
+    "Thursday": 16.0,
+    "Friday": 11.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 7.0,
+    "Tuesday": 10.0,
+    "Wednesday": 18.0
+  },
+  {
+    "time": "09:30",
+    "Thursday": 9.0,
+    "Friday": 6.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 9.0,
+    "Tuesday": 22.0,
+    "Wednesday": 11.0
+  },
+  {
+    "time": "10:00",
+    "Thursday": 7.0,
+    "Friday": 19.0,
+    "Saturday": 7.0,
+    "Sunday": 2.0,
+    "Monday": 15.0,
+    "Tuesday": 8.0,
+    "Wednesday": 11.0
+  },
+  {
+    "time": "10:30",
+    "Thursday": 15.0,
+    "Friday": 10.0,
+    "Saturday": 11.0,
+    "Sunday": 11.0,
+    "Monday": 13.0,
+    "Tuesday": 13.0,
+    "Wednesday": 8.0
+  },
+  {
+    "time": "11:00",
+    "Thursday": 11.0,
+    "Friday": 10.0,
+    "Saturday": 8.0,
+    "Sunday": 7.0,
+    "Monday": 12.0,
+    "Tuesday": 13.0,
+    "Wednesday": 19.0
+  },
+  {
+    "time": "11:30",
+    "Thursday": 23.0,
+    "Friday": 16.0,
+    "Saturday": 10.0,
+    "Sunday": 5.0,
+    "Monday": 19.0,
+    "Tuesday": 15.0,
+    "Wednesday": 15.0
+  },
+  {
+    "time": "12:00",
+    "Thursday": 25.0,
+    "Friday": 23.0,
+    "Saturday": 11.0,
+    "Sunday": 6.0,
+    "Monday": 21.0,
+    "Tuesday": 37.0,
+    "Wednesday": 28.0
+  },
+  {
+    "time": "12:30",
+    "Thursday": 39.0,
+    "Friday": 37.0,
+    "Saturday": 18.0,
+    "Sunday": 11.0,
+    "Monday": 38.0,
+    "Tuesday": 41.0,
+    "Wednesday": 31.0
+  },
+  {
+    "time": "13:00",
+    "Thursday": 18.0,
+    "Friday": 19.0,
+    "Saturday": 10.0,
+    "Sunday": 17.0,
+    "Monday": 15.0,
+    "Tuesday": 18.0,
+    "Wednesday": 31.0
+  },
+  {
+    "time": "13:30",
+    "Thursday": 18.0,
+    "Friday": 10.0,
+    "Saturday": 15.0,
+    "Sunday": 9.0,
+    "Monday": 21.0,
+    "Tuesday": 19.0,
+    "Wednesday": 17.0
+  },
+  {
+    "time": "14:00",
+    "Thursday": 20.0,
+    "Friday": 9.0,
+    "Saturday": 8.0,
+    "Sunday": 2.0,
+    "Monday": 11.0,
+    "Tuesday": 18.0,
+    "Wednesday": 11.0
+  },
+  {
+    "time": "14:30",
+    "Thursday": 14.0,
+    "Friday": 7.0,
+    "Saturday": 10.0,
+    "Sunday": 3.0,
+    "Monday": 11.0,
+    "Tuesday": 14.0,
+    "Wednesday": 12.0
+  },
+  {
+    "time": "15:00",
+    "Thursday": 8.0,
+    "Friday": 10.0,
+    "Saturday": 4.0,
+    "Sunday": 4.0,
+    "Monday": 12.0,
+    "Tuesday": 13.0,
+    "Wednesday": 12.0
+  },
+  {
+    "time": "15:30",
+    "Thursday": 11.0,
+    "Friday": 9.0,
+    "Saturday": 4.0,
+    "Sunday": 5.0,
+    "Monday": 9.0,
+    "Tuesday": 4.0,
+    "Wednesday": 5.0
+  },
+  {
+    "time": "16:00",
+    "Thursday": 12.0,
+    "Friday": 2.0,
+    "Saturday": 5.0,
+    "Sunday": 9.0,
+    "Monday": 9.0,
+    "Tuesday": 8.0,
+    "Wednesday": 2.0
+  },
+  {
+    "time": "16:30",
+    "Thursday": 12.0,
+    "Friday": 2.0,
+    "Saturday": 5.0,
+    "Sunday": 5.0,
+    "Monday": 12.0,
+    "Tuesday": 7.0,
+    "Wednesday": 7.0
+  },
+  {
+    "time": "17:00",
+    "Thursday": 3.0,
+    "Friday": 3.0,
+    "Saturday": 4.0,
+    "Sunday": 3.0,
+    "Monday": 5.0,
+    "Tuesday": 12.0,
+    "Wednesday": 1.0
+  },
+  {
+    "time": "17:30",
+    "Thursday": 5.0,
+    "Friday": 6.0,
+    "Saturday": 5.0,
+    "Sunday": 2.0,
+    "Monday": 3.0,
+    "Tuesday": 4.0,
+    "Wednesday": 4.0
+  },
+  {
+    "time": "18:00",
+    "Thursday": 5.0,
+    "Friday": 0.0,
+    "Saturday": 2.0,
+    "Sunday": 5.0,
+    "Monday": 8.0,
+    "Tuesday": 3.0,
+    "Wednesday": 6.0
+  },
+  {
+    "time": "18:30",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "19:00",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "19:30",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "20:00",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "20:30",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "21:00",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "21:30",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "22:00",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "22:30",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "23:00",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  },
+  {
+    "time": "23:30",
+    "Thursday": 0.0,
+    "Friday": 0.0,
+    "Saturday": 0.0,
+    "Sunday": 0.0,
+    "Monday": 0.0,
+    "Tuesday": 0.0,
+    "Wednesday": 0.0
+  }
+]

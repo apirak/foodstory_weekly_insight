@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .chart { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Sales Dashboard</h1>
+    <div id="salesChart" class="chart"></div>
+
+    <script>
+        // Function to load and process JSON data
+        function loadData(callback) {
+            d3.json("processed_sales_data.json").then(function(data) {
+                // Process the data as needed
+                data.forEach(function(d) {
+                    d.time = d.time;
+                    for (let day in d) {
+                        if (day !== 'time') {
+                            d[day] = +d[day] || 0;
+                        }
+                    }
+                });
+                callback(data);
+            }).catch(function(error) {
+                console.error("Error loading the JSON file:", error);
+            });
+        }
+
+        // Function to create the chart
+        function createChart(data) {
+            var margin = {top: 20, right: 20, bottom: 30, left: 50},
+                width = 960 - margin.left - margin.right,
+                height = 500 - margin.top - margin.bottom;
+
+            var svg = d3.select("#salesChart").append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            var x = d3.scalePoint()
+                .range([0, width])
+                .domain(data.map(function(d) { return d.time; }));
+
+            var y = d3.scaleLinear()
+                .range([height, 0])
+                .domain([0, d3.max(data, function(d) {
+                    return Math.max(...Object.values(d).filter(v => typeof v === 'number'));
+                })]);
+
+            var line = d3.line()
+                .x(function(d) { return x(d.time); })
+                .y(function(d) { return y(d.value); });
+
+            var days = Object.keys(data[0]).filter(key => key !== 'time');
+            var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+            days.forEach(function(day) {
+                var values = data.map(function(d) { return {time: d.time, value: d[day]}; });
+                
+                svg.append("path")
+                    .datum(values)
+                    .attr("fill", "none")
+                    .attr("stroke", color(day))
+                    .attr("stroke-width", 1.5)
+                    .attr("d", line);
+            });
+
+            svg.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x));
+
+            svg.append("g")
+                .call(d3.axisLeft(y));
+
+            // Add legend
+            var legend = svg.selectAll(".legend")
+                .data(days)
+                .enter().append("g")
+                .attr("class", "legend")
+                .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+            legend.append("rect")
+                .attr("x", width - 18)
+                .attr("width", 18)
+                .attr("height", 18)
+                .style("fill", color);
+
+            legend.append("text")
+                .attr("x", width - 24)
+                .attr("y", 9)
+                .attr("dy", ".35em")
+                .style("text-anchor", "end")
+                .text(function(d) { return d; });
+        }
+
+        // Load data and create chart
+        loadData(createChart);
+    </script>
+</body>
+</html>
